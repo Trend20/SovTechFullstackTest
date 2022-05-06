@@ -23,8 +23,10 @@ const Container = styled.div`
   width: 80%;
   padding: 15px;
   grid-gap: 10px;
-  margin: 'auto'
-  justify-content: 'center'
+  margin: auto;
+  justify-content: center;
+  margin-top: 50px;
+
 `
 
 const CardContainer = styled.div`

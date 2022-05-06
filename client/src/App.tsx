@@ -1,5 +1,6 @@
 import Persons from './components/Persons';
 import Individual from './components/Individual';
+import Header from './components/Header';
 import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import {
@@ -20,6 +21,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
+       <Header />
         <div className="container">
           <Routes>
             <Route  path="/" element={<Persons />} />

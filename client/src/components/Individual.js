@@ -1,6 +1,6 @@
-import React from 'react'
 import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router";
+import styled from 'styled-components'
 
 const PERSON_QUERY = gql`
   query getPerson($name: String!) {
@@ -30,8 +30,9 @@ const  Individual = () =>{
   const height = person.height;
   const mass = person.mass;
   const gender = person.gender;
+  const homeworld = person.homeworld;
   return (
-    <div
+    <MainContainer
       key={names}
       className="card"
       style={{ maxWidth: 30 + "rem", textAlignLast: "left" }}
@@ -43,10 +44,23 @@ const  Individual = () =>{
         <h6 className="card-subtitle mb-2 text-muted">Mass: {mass}</h6>
         <h6 className="card-subtitle mb-2 text-muted">Height: {height}</h6>
         <h6 className="card-subtitle mb-2 text-muted">Gender: {gender}</h6>
-        <p className="card-text"></p>
+        <h6 className="card-subtitle mb-2 text-muted">Homeworld: {homeworld}</h6>
       </div>
-    </div>
+    </MainContainer>
   );
 }
 
+
+const MainContainer = styled.div`
+  display:flex;
+  flex-direction: column;
+  background: '#fff';
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  height: auto;
+  padding: 30px;
+  margin: auto;
+  margin-top: 200px;
+  background: linear-gradient(135deg, #f34079 40%, #fc894d);
+  color: #fff;
+`
 export default Individual
