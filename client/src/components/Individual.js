@@ -9,12 +9,13 @@ const PERSON_QUERY = gql`
       height
       mass
       gender
+      homeworld
     }
   }
 `; 
 
 
-function Individual() {
+const  Individual = () =>{
   const { name } = useParams();
 
   const { loading, error, data } = useQuery(PERSON_QUERY, {
@@ -32,17 +33,17 @@ function Individual() {
   return (
     <div
       key={names}
-      class="card"
+      className="card"
       style={{ maxWidth: 30 + "rem", textAlignLast: "left" }}
     >
-      <div class="card-body">
-        <h4 class="card-title" style={{ textAlignLast: "left" }}>
+      <div className="card-body">
+        <h4 className="card-title" style={{ textAlignLast: "left" }}>
           {names}
         </h4>
-        <h6 class="card-subtitle mb-2 text-muted">Mass: {mass}</h6>
-        <h6 class="card-subtitle mb-2 text-muted">Height: {height}</h6>
-        <h6 class="card-subtitle mb-2 text-muted">Gender: {gender}</h6>
-        <p class="card-text"></p>
+        <h6 className="card-subtitle mb-2 text-muted">Mass: {mass}</h6>
+        <h6 className="card-subtitle mb-2 text-muted">Height: {height}</h6>
+        <h6 className="card-subtitle mb-2 text-muted">Gender: {gender}</h6>
+        <p className="card-text"></p>
       </div>
     </div>
   );

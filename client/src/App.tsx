@@ -1,6 +1,6 @@
-import React from 'react';
 import Persons from './components/Persons';
 import Individual from './components/Individual';
+import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import {
   BrowserRouter,
